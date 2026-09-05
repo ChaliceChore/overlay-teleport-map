@@ -19,3 +19,18 @@
 *.cs    binary
 *.txd   binary
 *.png   binary
+
+# ============================================================================
+#  KEPT OUT OF THE RELEASE ZIP.
+#
+#  Every GitHub Release carries an auto-generated "Source code (zip)" built from
+#  the tag with git archive, and that is what most people will download. These
+#  three are repository plumbing - nobody installing the mod needs them, and a
+#  hidden .github folder in a mod download just invites questions.
+#
+#  COVER.png deliberately stays: README.md ships in the zip and shows it.
+# ============================================================================
+
+/.github        export-ignore
+/.gitignore     export-ignore
+/.gitattributes export-ignore
