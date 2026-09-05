@@ -1,6 +1,6 @@
 # Overlay Teleport Map
 
-![Overlay Teleport Map](COVER.png)
+![Overlay Teleport Map](https://raw.githubusercontent.com/ChaliceChore/overlay-teleport-map/main/COVER.png)
 
 Press a key to bring up the map over your game, move the cursor, click, and you
 are there - with your car, your train, your parachute, or your jetpack. For GTA
@@ -126,7 +126,7 @@ along. Neither does anything if the mod it supports is not installed.
 
 ## Known Issues and Limitations
 
-### Try not to arrive at a mission objective marker while the mission is talking to you
+### 1. Try not to arrive at a mission objective marker while the mission is talking to you
 
 If a mission is playing a conversation while you travel, try not to reach or
 teleport to the objective marker until it has finished. Teleporting itself is
@@ -138,7 +138,7 @@ affected. An example of this is the **Drive-By** mission.
 If you happen to find more such mission(s), report back by creating a GitHub
 Issue using the appropriate template.
 
-### The camera tilts once when the overlay opens
+### 2. The camera tilts once when the overlay opens
 
 Opening the overlay nudges the camera - a single step at `GameSpeed=0.0`, or a
 smooth slide to horizontal at `GameSpeed=1.0`. It settles as soon as the map is
@@ -148,7 +148,7 @@ I have tried **very hard** to fix this, but I cannot seem to find a solution.
 If you are a modder and know how to fix it, share the solution in a GitHub
 Issue and I will try to implement it.
 
-### Icons from other CLEO mods only appear if a helper exists for that mod
+### 3. Icons from other CLEO mods only appear if a helper exists for that mod
 
 The overlay mirrors the game's own blip system, so it shows everything the pause
 map shows for anything the game itself tracks. Some mods add their icons a
@@ -168,10 +168,37 @@ blips.
 If you want helper scripts for more CLEO mods, create a request through a GitHub
 Issue using the appropriate template.
 
-### A few things are not shown
+### 4. Four blip icons are drawn differently from the game's
+
+The overlay ships its own icon set, and four of them are deliberately not the
+vanilla artwork:
+
+| Icon | What is different |
+| ------ | ------------------- |
+| **Boatyard** | The vanilla icon is solid black and vanishes against the map. I hate it. |
+| **Tattoo** | Colours inverted to make its style match other blips |
+| **Save** | Drawn slightly smaller, so it carries the same weight as the icons around it |
+| **Player arrow** | Recentred, so it points from where you are instead of pivoting about its own middle |
+
+**Nothing in the game changes** - your radar and pause map are untouched. This
+only affects how those four look on the overlay.
+
+### 5. A few things are not shown
 
 Pickups, gang areas, airstrip markers and the like are left off the overlay,
 because I have not really looked into adding them.
+
+### 6. The map artwork is nudged a few pixels
+
+The map comes from Junior_Djjr's *[Proper Radar](https://www.mixmods.com.br/2022/07/proper-radar/ "Go to Mixmods.com.br")*,
+moved **5 px right and 7 px down** - a shift of roughly 0.1%. The game's own map
+is very slightly out of true with the world, and this lines the overlay up so
+that clicking a place puts you at that place.
+
+Two things follow from it. The overlay will not match *Proper Radar*
+pixel-for-pixel if you compare the two side by side. And because the correction
+is one fixed offset applied to the whole map, a small error of a few metres can
+still remain in places.
 
 ## Uninstall
 
@@ -180,25 +207,25 @@ written to your savegame.
 
 ## Troubleshooting
 
-**The game crashes when I open the map**
+1. **The game crashes when I open the map**
 One of the two `.txd` files is missing or renamed. Both `MAP.txd` and `BLIPS.txd`
 must be present in `models/txd/`, spelled exactly like that.
 
-**Nothing happens when I press the key**
+2. **Nothing happens when I press the key**
 Check `OpenKey` in `cleo/OTM.ini`. It is a Windows virtual-key code, not a letter -
 192 is `` ` ``, 220 is `\`. Also check CLEO is installed and working.
 
-**The map opens but there are no blips**
+3. **The map opens but there are no blips**
 Check `ShowBlips=1` in the ini.
 
-**Mod icons are missing**
+4. **Mod icons are missing**
 Check `ShowModBlips=1`, and that you installed the matching helper from `.(optionals)`.
 
-**Middle-mouse dragging does not pan the map**
+5. **Middle-mouse dragging does not pan the map**
 You are fully zoomed out, where the map already fills the screen and there is
 nowhere to pan to. Zoom in first.
 
-**Icons vanish when I switch a category off in the pause map**
+6. **Icons vanish when I switch a category off in the pause map**
 That is intended - the overlay follows the pause map's legend. Set
 `IgnoreMapLegend=1` if you would rather it ignored the legend and always showed
 everything.
@@ -207,7 +234,10 @@ everything.
 
 - **starblind94** - for the original mod that OTM is built on,
   *[Super Fast Teleporter](https://libertycity.net/files/gta-san-andreas/127554-super-fast-teleporter.html "Go to LibertyCity.net")*.
-- **Junior_Djjr** - for the fixes to *Super Fast Teleporter* and the CLEO+
-  groundwork that made the rest possible, and as the author of *More Radar
-  Icons* and *Buy Property*, both supported here through the optional helper
-  scripts.
+- **Junior_Djjr** - for a great deal of what this mod is built on:
+  - the fixes to *Super Fast Teleporter*, and the CLEO+ groundwork that made the
+    rest possible
+  - **the map artwork**, which is taken from *Proper Radar* and
+    realigned very slightly - see Known Issues 6
+  - *More Radar Icons* and *Buy Property*, both supported here through the
+    optional helper scripts

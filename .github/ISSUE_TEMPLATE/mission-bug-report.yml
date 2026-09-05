@@ -84,6 +84,6 @@ body:
     id: otm-version
     attributes:
       label: Overlay Teleport Map version
-      placeholder: "v82"
+      placeholder: "1.0"
     validations:
       required: true
