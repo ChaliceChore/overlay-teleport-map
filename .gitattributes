@@ -28,9 +28,14 @@
 #  three are repository plumbing - nobody installing the mod needs them, and a
 #  hidden .github folder in a mod download just invites questions.
 #
-#  COVER.png deliberately stays: README.md ships in the zip and shows it.
+#  COVER.png and PSEUDOCODE.md go too: the cover is for the repo page and the
+#  social preview, and the pseudocode is for people reading the project on
+#  GitHub, not for someone installing the mod. The download is then exactly two
+#  things - the Readme, and the folder it tells you to drag into modloader.
 # ============================================================================
 
 /.github        export-ignore
 /.gitignore     export-ignore
 /.gitattributes export-ignore
+/COVER.png      export-ignore
+/PSEUDOCODE.md  export-ignore
