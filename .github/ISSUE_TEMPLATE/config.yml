@@ -1,0 +1,13 @@
+# Blank issues stay ENABLED on purpose: a template set with no escape hatch turns a
+# simple question into a form nobody wants to fill in. GitHub shows the templates
+# first and offers a blank issue underneath, which is the right order.
+blank_issues_enabled: true
+
+contact_links:
+  - name: Try the Readme first
+    # CHECK THIS URL before pushing - it assumes the repository is named
+    # overlay-teleport-map under ChaliceChore.
+    url: https://github.com/ChaliceChore/overlay-teleport-map#troubleshooting
+    about: >
+      Crashes when opening the map, the key doing nothing, missing blips and
+      middle-mouse panning are all answered in the Troubleshooting section.

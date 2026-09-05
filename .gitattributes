@@ -1,0 +1,21 @@
+# ============================================================================
+#  LINE ENDINGS ARE LOAD-BEARING HERE.
+#
+#  Every text file in this project is CRLF, and the ini is read by a CLEO
+#  script rather than by a text editor that shrugs at line endings. Without
+#  explicit rules git would normalise to LF in the repository and hand back
+#  whatever the cloner's core.autocrlf happens to say.
+#
+#  Explicit eol=crlf, not `text=auto`: the point is that every checkout is
+#  identical, not merely self-consistent on one machine.
+# ============================================================================
+
+*.md    text eol=crlf
+*.ini   text eol=crlf
+*.txt   text eol=crlf
+*.yml   text eol=crlf
+
+# Compiled CLEO scripts and game assets - never touch these.
+*.cs    binary
+*.txd   binary
+*.png   binary

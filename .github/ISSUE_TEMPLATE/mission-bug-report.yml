@@ -1,0 +1,89 @@
+name: Mission Bug Report
+description: A mission broke after you teleported to its objective
+title: "[Mission] "
+labels: ["mission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Arriving at an objective **while the mission is still talking to you** can cut
+        the dialogue short, and some missions do not recover from that. Teleporting
+        itself is fine - arriving early is the problem.
+
+        Reports here build the list of affected missions, so please file one even if
+        you are not certain the mod caused it.
+
+  - type: input
+    id: mission
+    attributes:
+      label: Mission name
+      placeholder: "Drive-By"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-broke
+    attributes:
+      label: What the mission did
+      description: >
+        Did it fail outright, hang, skip a section, or leave you unable to finish?
+        Say what you saw rather than what you think caused it.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: dialogue
+    attributes:
+      label: Was dialogue playing when you arrived?
+      description: This is the known trigger, so it is the most useful thing you can tell us.
+      options:
+        - "Yes - a conversation was still going"
+        - "No - it had finished"
+        - I did not notice
+    validations:
+      required: true
+
+  - type: dropdown
+    id: repeatable
+    attributes:
+      label: Does it happen every time?
+      description: >
+        We do not yet know whether this is deterministic. If you have only seen it
+        once, say so - that is still useful.
+      options:
+        - "Every time I try it"
+        - "Sometimes"
+        - "Only happened once"
+        - I have not tried again
+    validations:
+      required: true
+
+  - type: textarea
+    id: where
+    attributes:
+      label: Where did you teleport from, and to?
+      description: >
+        Roughly is fine. If you landed on the objective marker itself rather than near
+        it, mention that.
+
+  - type: dropdown
+    id: game-version
+    attributes:
+      label: Which version of GTA San Andreas are you running?
+      options:
+        - 1.0 US
+        - 1.01
+        - 2.0
+        - Steam
+        - Definitive Edition
+        - I do not know
+    validations:
+      required: true
+
+  - type: input
+    id: otm-version
+    attributes:
+      label: Overlay Teleport Map version
+      placeholder: "v82"
+    validations:
+      required: true

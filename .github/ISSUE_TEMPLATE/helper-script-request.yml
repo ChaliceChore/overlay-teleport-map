@@ -1,0 +1,61 @@
+name: Helper Script Request
+description: Ask for a mod's blips to be shown on the overlay
+title: "[Helper] "
+labels: ["helper request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The overlay reads the game's own blip list, so it already shows everything the
+        pause map shows. A helper is only needed for mods that add their icons through
+        CLEO+ instead, which the overlay cannot see.
+
+        **The question below settles which case you are in**, so please answer it first.
+
+  - type: dropdown
+    id: pause-map
+    attributes:
+      label: Do that mod's icons appear on the pause map?
+      description: >
+        Open the pause map in game and look. If the icons are there but missing from
+        the overlay, that is a bug rather than a helper request - please use the
+        General Bug Report instead.
+      options:
+        - "No - they are missing from the pause map too"
+        - "Yes - they show on the pause map but not on the overlay"
+        - I have not checked
+    validations:
+      required: true
+
+  - type: input
+    id: mod-name
+    attributes:
+      label: Name of the mod
+    validations:
+      required: true
+
+  - type: input
+    id: mod-link
+    attributes:
+      label: Working link to the mod
+      description: Somewhere the mod can be read about and downloaded.
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-to-show
+    attributes:
+      label: Which of its icons do you want on the overlay?
+      description: >
+        Say exactly which ones. A mod may add several kinds of icon and only some of
+        them are worth teleporting to.
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        Please note that each helper is a separate script written against that mod's own
+        settings and data, so this is not a small change and not every mod can be
+        supported. A clear answer above makes it far more likely to happen.

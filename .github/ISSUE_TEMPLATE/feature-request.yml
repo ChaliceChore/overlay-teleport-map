@@ -1,0 +1,55 @@
+name: Feature Request
+description: Suggest a new setting or behaviour - or share a fix for a known issue
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Two things belong here:
+
+        - a setting or behaviour you would like the overlay to have
+        - **a fix for one of the Known Issues** in the Readme. The camera tilt on
+          opening is the standing one, and a working solution to it is very welcome.
+
+        For a mod's blips to appear on the overlay, use the **Helper Script Request**
+        template instead.
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is this?
+      options:
+        - A new setting or behaviour
+        - A fix for a Known Issue
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What would you like?
+      description: >
+        If it is a fix, say which issue it addresses and what the fix is - opcodes,
+        addresses or a code snippet if you have them.
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is it worth doing?
+      description: >
+        What does it let you do that you cannot do now? This matters more than it
+        might seem - registers and settings are both in short supply, so a new setting
+        usually costs an existing one.
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        One thing worth knowing: the mod is out of spare registers, so adding a setting
+        is rarely just adding a setting. A request that explains the problem it solves
+        is far easier to weigh than one that names a solution.

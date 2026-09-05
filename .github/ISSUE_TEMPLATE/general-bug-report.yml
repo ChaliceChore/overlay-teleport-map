@@ -1,0 +1,106 @@
+name: General Bug Report
+description: Something in Overlay Teleport Map does not work as described
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before filing, please check the **Troubleshooting** section of the Readme -
+        no blips, the key doing nothing, and crashes on opening the map are all
+        answered there.
+
+  - type: dropdown
+    id: game-version
+    attributes:
+      label: Which version of GTA San Andreas are you running?
+      description: >
+        This mod reads fixed memory addresses and works on 1.0 US only. It does not
+        detect the wrong version - it simply misbehaves, which is what most reports
+        turn out to be.
+      options:
+        - 1.0 US
+        - 1.01
+        - 2.0
+        - Steam
+        - Definitive Edition
+        - I do not know
+    validations:
+      required: true
+
+  - type: input
+    id: otm-version
+    attributes:
+      label: Overlay Teleport Map version
+      placeholder: "v82"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: install
+    attributes:
+      label: How is it installed?
+      options:
+        - modloader
+        - Copied directly into the game folder
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happens
+      description: What you saw, and what you expected instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: settings
+    attributes:
+      label: Any settings you changed
+      description: >
+        Paste the lines you edited in `cleo/OTM.ini`, or the whole file. A great many
+        reports come down to a setting rather than a fault.
+      render: ini
+
+  - type: checkboxes
+    id: helpers
+    attributes:
+      label: Optional helpers installed
+      options:
+        - label: Buy Property helper
+        - label: More Radar Icons helper
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostic output (if the problem involves blips from other mods)
+      description: >
+        Create an empty file called `OTM_debug.txt` in your `CLEO` folder, run the
+        game once, then attach the files the helpers write next to it -
+        `OTM_BuyProperty_Status.ini` and `OTM_BuyProperty_Dump.csv`, and the
+        `OTM_MoreRadarIcons_*` equivalents. Delete `OTM_debug.txt` afterwards to go
+        quiet again. No recompile, no reinstall.
+
+  - type: textarea
+    id: other-mods
+    attributes:
+      label: Other CLEO mods installed
+      description: Especially anything that adds, moves or hides map blips.
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Drag images in here. A screenshot of the overlay is usually worth the rest of this form.
