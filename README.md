@@ -36,6 +36,8 @@ instantly, without going through the menu.
   **it does not detect the wrong version** - it will simply misbehave.
 - **[Essentials Pack](https://www.mixmods.com.br/2019/06/sa-essentials-pack/ "Go to Mixmods.com.br")**
   – It includes the 1.0 US `gta_sa.exe`, so it downgrades the game for you.
+- **CLEO** – Either CLEO 4.4.4 or CLEO 5.4.0; both are tested. **CLEO+** must also be
+  installed, and it comes with the Essentials Pack.
 
 ## Install
 
@@ -229,6 +231,15 @@ nowhere to pan to. Zoom in first.
 That is intended - the overlay follows the pause map's legend. Set
 `IgnoreMapLegend=1` if you would rather it ignored the legend and always showed
 everything.
+
+## More
+
+- **[How it works](https://github.com/ChaliceChore/overlay-teleport-map/blob/main/PSEUDOCODE.md)** -
+  a pseudocode walkthrough of the script: what runs on each frame while the
+  overlay is up, how a click becomes a teleport, and how the blips are found,
+  filtered and drawn.
+- **[This mod on LibertyCity](https://libertycity.net/files/gta-san-andreas/242290-overlay-teleport-map-v1-0.html "Go to LibertyCity.net")** -
+  alternative download, and where to leave a comment if you do not use GitHub.
 
 ## Credits
 

@@ -25,11 +25,15 @@ in memory. Neither helper ever reads the other mod's script memory.
 They communicate through four CLEO shared variables:
 
 ```txt
-4260 / 4261   Buy Property      table address / record count
-4262 / 4263   More Radar Icons  table address / record count
+992 / 993   Buy Property      table address / record count
+994 / 995   More Radar Icons  table address / record count
 ```
 
 One record is 20 bytes: `float X, float Y, float Z, int icon, int flags`.
+
+The ids have to be 0-1023: CLEO stores these in a fixed 1024-entry array. v1.0 used ids in
+the 4245-4263 range, which CLEO 4 wrote past the end of its array without complaint and CLEO 5
+refuses outright.
 
 ## Part 1 - OTM's lifecycle
 
